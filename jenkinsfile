@@ -2,7 +2,16 @@ node('maven')
 {
   stage('first stage')
   {
-     sh "echo hello world"
+  // use the id of the globally configured maven instance
+  
+  def mvnTool1 = tool 'Apache Maven 3.6.2'
+    
+     
+ // execute maven
+ 
+ sh "${mvnTool1}/bin/mvn clean install"
+  sh "echo hello world"
+
   }
   stage('second stage')
   {
@@ -10,7 +19,7 @@ node('maven')
   }
   stage('3rd stage')
   {
-     sh "mkdir mula"
+     sh "echo sample in feature branch"
   }
 }  
   
