@@ -10,7 +10,7 @@ node('maven')
   }
   stage('3rd stage')
   {
-     sh "mkdir hello-world"
+     sh "mkdir mula"
   }
 }  
   
