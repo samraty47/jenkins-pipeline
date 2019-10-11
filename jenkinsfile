@@ -10,6 +10,7 @@ node('maven')
  // execute maven
  
  sh "${mvnTool1}/bin/mvn clean install"
+ junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
   sh "echo hello world"
 
   }
