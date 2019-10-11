@@ -1,0 +1,18 @@
+node('maven')
+{
+  stage('first stage')
+  {
+     sh "echo hello world"
+  }
+  stage('second stage')
+  {
+     sh "touch hello-world"
+  }
+  stage('3rd stage')
+  {
+     sh "mkdir hello-world"
+  }
+}  
+  
+  
+  
