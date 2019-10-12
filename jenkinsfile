@@ -17,7 +17,7 @@ node('maven')
   }
   stage('maven package')
   (
-  sh "$mvnhome/bin/mvn clean package -DskipTests=true"
+  sh "$mvnTool/bin/mvn clean package -DskipTests=true"
   }
   stage('second stage')
   {
