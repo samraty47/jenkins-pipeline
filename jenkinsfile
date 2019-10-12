@@ -11,9 +11,13 @@ node('maven')
  
  sh "${mvnTool1}/bin/mvn clean install"
  junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
- publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'surefire-report.html'])
+ 
   sh "echo hello world"
 
+  }
+  stage('maven package')
+  (
+  sh "$mvnhome/bin/mvn clean package -DskipTests=true"
   }
   stage('second stage')
   {
