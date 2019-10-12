@@ -9,15 +9,15 @@ node('maven')
      
  // execute maven
  
- sh "${mvnTool1}/bin/mvn clean install"
+ sh "${mvnTool1}/bin/mvn clean package"
  junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
  
   sh "echo hello world"
 
   }
-  stage('maven package')
+  stage('artifacts')
   {
-  sh "$mvnTool/bin/mvn clean package -DskipTests=true"
+ archiveArtifacts '**/target/*.war'
   }
   stage('second stage')
   {
